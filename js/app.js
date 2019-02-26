@@ -16,7 +16,7 @@ var app = new Vue({
 	},
 	methods:{
 		getAllUsers:function(){
-			axios.get("http://localhost/vuephp/api.php?action=read")
+			axios.get("http://www.wezone.unaux.com/api.php?action=read")
 			.then(function(response){
 				if (response.data.error) 
 				{
@@ -29,7 +29,7 @@ var app = new Vue({
 
 		saveUser: function(){
 			var formData = app.toFormData(app.newUser)
-			axios.post("http://localhost/vuephp/api.php?action=create", formData)
+			axios.post("http://www.wezone.unaux.com/api.php?action=create", formData)
 			.then(function(response){
 				app.newUser = {username: "", email: "", mobile: ""}
 				if (response.data.error) 
@@ -45,7 +45,7 @@ var app = new Vue({
 		updateUser: function()
 		{
 			var formData = app.toFormData(app.clickedUser)
-			axios.post("http://localhost/vuephp/api.php?action=update", formData)
+			axios.post("http://www.wezone.unaux.com/api.php?action=update", formData)
 			.then(function(response){
 				app.clickedUser = {}
 				if (response.data.error) 
@@ -60,7 +60,7 @@ var app = new Vue({
 
 		deleteUser: function(){
 			var formData = app.toFormData(app.clickedUser)
-			axios.post("http://localhost/vuephp/api.php?action=delete", formData)
+			axios.post("http://www.wezone.unaux.com/api.php?action=delete", formData)
 			.then(function(response){
 				app.clickedUser = {}
 				if (response.data.error) 
